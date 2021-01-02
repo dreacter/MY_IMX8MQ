@@ -4,6 +4,7 @@ all: $(objects)
 .PHONY : $(objects) clean
 
 setup_env:
+	chmod +x ./tools/fsl-imx-wayland-glibc-x86_64-core-image-minimal-aarch64-imx8mqevk-toolchain-5.4-zeus.sh
 	./tools/fsl-imx-wayland-glibc-x86_64-core-image-minimal-aarch64-imx8mqevk-toolchain-5.4-zeus.sh -d ./sdk -y
 	sudo apt install libssl-dev autoconf automake bc bison build-essential ccache cscope curl device-tree-compiler expect flex ftp-upload gdisk iasl libattr1-dev libcap-dev libfdt-dev libftdi-dev libglib2.0-dev libhidapi-dev libncurses5-dev libpixman-1-dev libssl-dev libtool make mtools netcat python-crypto python3-crypto python-pyelftools python3-pycryptodome python3-pyelftools python-serial python3-serial rsync unzip uuid-dev xdg-utils xterm xz-utils zlib1g-dev
 	pip3 install pycryptodomex pycryptodome pyelftools
