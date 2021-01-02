@@ -22,7 +22,7 @@ imx-atf:
 imx-optee-os:
 	cd imx-optee-os && unset ARCH && make -j8 PLATFORM=imx PLATFORM_FLAVOR=mx8mqevk CROSS_COMPILE=aarch64-poky-linux- CROSS_COMPILE64=aarch64-poky-linux- LDFLAGS= O=./build.mx8mqevk CFG_WERROR=y CFG_TEE_CORE_LOG_LEVEL=1 CFG_TEE_TA_LOG_LEVEL=0 all && export ARCH=arm64
 
-imx-mkimage: uboot-imx imx-atf imx-optee-os
+imx-mkimage: get_source_code uboot-imx imx-atf imx-optee-os
 	cp uboot-imx/u-boot-nodtb.bin imx-mkimage/iMX8M/
 	cp uboot-imx/u-boot.bin imx-mkimage/iMX8M/
 	cp uboot-imx/spl/u-boot-spl.bin imx-mkimage/iMX8M/
